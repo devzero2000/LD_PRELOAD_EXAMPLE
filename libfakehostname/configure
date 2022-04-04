@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: LGPL-2.1-or-later
+set -e
+
+cflags="CFLAGS=${CFLAGS-}"
+cxxflags="CXXFLAGS=${CXXFLAGS-}"
+args=()
+
+for arg in "$@"; do
+    case "$arg" in
+        CFLAGS=*)
+            cflags="$arg"
+            ;;
+        CXXFLAGS=*)
+            cxxflags="$arg"
+            ;;
+        *)
+            args+=("$arg")
+    esac
+done
+
+export "${cflags?}" "${cxxflags?}"
+set -x
+if [ -d build ]
+then
+	meson --reconfigure build "${args[@]}"
+else
+	exec meson build "${args[@]}"
+fi
