@@ -1,0 +1,15 @@
+[submodule "unrandom"]
+	path = unrandom
+	url = https://github.com/whitequark/unrandom.git
+[submodule "timeskew"]
+	path = timeskew
+	url = https://github.com/vi/timeskew.git
+[submodule "fsatrace"]
+	path = fsatrace
+	url = https://github.com/jacereda/fsatrace.git
+[submodule "ld-preload-open"]
+	path = ld-preload-open
+	url = https://github.com/fritzw/ld-preload-open.git
+[submodule "libfaketime"]
+	path = libfaketime
+	url = https://github.com/wolfcw/libfaketime.git
