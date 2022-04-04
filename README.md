@@ -1,0 +1,2 @@
+# LD_PRELOAD_EXAMPLE
+Some LD_PRELOAD examples
