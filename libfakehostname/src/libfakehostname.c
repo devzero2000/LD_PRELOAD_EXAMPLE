@@ -36,14 +36,13 @@ static void *getLibFunc(const char *funcname)
     return func;
 }
 
-static void *chkfakehost() 
+static void chkfakehost()
 {
-if ( (long int)(!error_is_printed && getenv("FAKEHOSTNAME") && strlen(getenv("FAKEHOSTNAME"))) > sysconf(_SC_HOST_NAME_MAX)) {
+if ( (long int)(!error_is_printed && getenv("FAKEHOSTNAME") && strlen(getenv("FAKEHOSTNAME"))) > sysconf(_SC_HOST_NAME_MAX)){
     fprintf(stderr,"WARNING! FAKEHOSTNAME variable exceeds %ld (HOST_NAME_MAX) characters.\n",sysconf(_SC_HOST_NAME_MAX));
     error_is_printed = true;
     exit(1);
     }
-exit(0);
 }
 
 int gethostname(char *name, size_t len) {
