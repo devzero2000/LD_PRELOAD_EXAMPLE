@@ -17,7 +17,7 @@ libfakehostname_so_version = '@0@.@1@.@2@'.format((libfakehostname_lt_c - libfak
                                               libfakehostname_lt_r)
 cc = meson.get_compiler('c')
 libdl = cc.find_library('dl')
-libfakehostname_lib_shared = shared_library('libfakehostname',
+libfakehostname_lib_shared = shared_library('fakehostname',
                             fakehostname_sources,
                             version : libfakehostname_so_version,
                             dependencies: libdl,
